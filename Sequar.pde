@@ -55,10 +55,6 @@ void setup() {
 
   size(width, height);
   frameRate(60);
-  debug(this);
-
-  textSize(26);
-  textAlign(CENTER);
 
   // http://pixabay.com/static/uploads/photo/2011/05/25/14/46/piano-keys-7624_640.jpg
   background = loadImage("background.jpg");
@@ -80,15 +76,12 @@ void setup() {
 
   bb = new BeatBox[audio.length];
   for ( int i=0; i<audio.length; i++) {
-    
     bb[i] = new BeatBox(width / 3 * (i % 3) + width / 6, height / 3 * ((i - i % 3) / 3) + height / 6, width / 4 , height / 4);
     bb[i].setAudio(loadSound(audio[i]));
   }
 
-
   // sets up the collision callbacks
   detector = new CollisionDetector (physics, this);
-
 }
 
 AudioPlayer loadSound(String filename) {
@@ -147,5 +140,6 @@ void collision(Body b1, Body b2, float impulse)
 }
 
 void myCustomRenderer(World world) {
+  // Noting to do yet.
 }
 
